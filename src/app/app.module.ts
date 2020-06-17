@@ -8,7 +8,7 @@ import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
 import {ReactiveFormsModule} from '@angular/forms';
-// import { RecaptchaModule } from 'ng-recaptcha';
+ import { RecaptchaModule } from 'ng-recaptcha';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -71,8 +71,8 @@ import { TestProgressComponent } from './test1/testprogress/testprogress.compone
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ChartsModule,
-    ReactiveFormsModule
-    // RecaptchaModule
+    ReactiveFormsModule,
+     RecaptchaModule
   ],
   declarations: [
     AppComponent,

@@ -26,8 +26,8 @@ export class RegisterComponent {
     console.log(this.registration.value);
   }
 
-//   resolved(captchaResponse: string) {
-//     console.log(`Resolved captcha with response: ${captchaResponse}`);
-// }
+   resolved(captchaResponse: string) {
+     console.log(`Resolved captcha with response: ${captchaResponse}`);
+ }
 
 }
