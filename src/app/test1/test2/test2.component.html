@@ -1,0 +1,109 @@
+<div class="row" >
+    <div class="col-md-2"></div>
+    <div class="col-md-7  ">
+      <div class="card" style="color:#775123">
+        <div class="card-header" style="text-align:center;font-size: 30px;color:#775123">
+          <strong>Register with us</strong>
+        </div>
+        <div class="card-body" style="background-color: #b8dfe1;">
+          <form action="" [formGroup]="registrationForm" method="post" enctype="multipart/form-data" class="form-horizontal"  >
+            {{
+              registrationForm.value | json
+            }}
+            
+            <div class="form-group row">
+              
+              <label class="col-md-2 col-form-label" for="first-name">First Name</label>
+              <div class="col-md-9">
+                <input type="text" id="first-name" name="first-name" class="form-control" placeholder="Enter First Name" formControlName="firstname">
+              </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-2 col-form-label" for="last-name">Last Name</label>
+                <div class="col-md-9">
+                  <input type="text" id="last-name" name="last-name" class="form-control" placeholder="Enter Last Name" formControlName="lastname">
+                </div>
+              </div>
+
+            <div class="form-group row">
+              <label class="col-md-2 col-form-label" for="email-input">Email Input</label>
+              <div class="col-md-9">
+                <input type="email" id="email-input" name="email-input" class="form-control" placeholder="Enter Email" autocomplete="email" formControlName="email">
+                <!-- <span class="help-block">Please enter your email</span> -->
+              </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-2 col-form-label" for="password">Password</label>
+                <div class="col-md-9">
+                  <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password" autocomplete="current-password" formControlName="password">
+                  <!-- <span class="help-block">Please enter a complex password</span> -->
+                </div>
+              </div>
+
+              <div class="form-group row">
+                  <label class="col-md-2 col-form-label" for="confirm-password">Confirm Password</label>
+                  <div class="col-md-9">
+                    <input type="password" id="confirm-password" name="confirm-password" class="form-control" placeholder="Confirm Password" autocomplete="current-password" formControlName="confirmpassword">
+                    <!-- <span class="help-block">Please enter a complex password</span> -->
+                  </div>
+                </div>
+
+            <div class="form-group row">
+                <label class="col-md-2 col-form-label" for="personal-mobile">Personal Mobile</label>
+                <div class="col-md-9">
+                  <input type="tel" id="personal-mobile" name="personal-mobile" class="form-control" placeholder="Enter your Personal Mobile Number" formControlName="personalmobile">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                  <label class="col-md-2 col-form-label" for="studyroom-name">Study Room Name</label>
+                  <div class="col-md-9">
+                    <input type="text" id="studyroom-name" name="studyroom-name" class="form-control" placeholder="Enter Study Room  Name" formControlName="studyroomname">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-2 col-form-label" for="city">City</label>
+                    <div class="col-md-9">
+                      <select id="city-select" name="city-select" class="form-control" formControlName="city">
+                        <option value="0">Please select</option>
+                        <option value="1">Mumbai</option>
+                        <option value="2">Pune</option>
+                        <option value="3">Delhi</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                      <label class="col-md-2 col-form-label" for="area">Area</label>
+                      <div class="col-md-9">
+                        <select id="city-select" name="area-select" class="form-control" formControlName="area">
+                          <option value="0">Please select</option>
+                          <option value="1">Area 1</option>
+                          <option value="2">Area 2</option>
+                          <option value="3">Area 3</option>
+                        </select>
+                      </div>
+                    </div>
+
+            <div class="form-group row">
+              <label class="col-md-2 col-form-label" for="state">State</label>
+              <div class="col-md-9">
+                <input type="text" id="state" name="state" class="form-control" placeholder="name of state here" 
+                formControlName="state" disabled >
+              </div>
+            </div>
+
+            
+          </form>
+        </div>
+        <div class="card-footer" style="text-align:center;">
+          <button type="submit" class="btn btn-lg btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+          &nbsp;&nbsp;&nbsp;
+          <button type="reset" class="btn btn-lg btn-danger"><i class="fa fa-ban"></i> Reset</button>
+        </div>
+      </div>
+      
+    </div>
