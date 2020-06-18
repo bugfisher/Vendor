@@ -31,7 +31,7 @@ export class ValidationService
 
     static mobileValidator(control) 
     {
-      if (control.value.match(/^[789]\d{9}$/))
+      if (control.value.match(/^([+]\d{2})?\d{10}$/))
       {
         return null;
       } 
