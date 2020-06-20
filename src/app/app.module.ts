@@ -52,8 +52,8 @@ import { Test1Component } from './test1/test1.component';
 import { Test2Component } from './test1/test2/test2.component';
 import { TestnavComponent } from './test1/testnav/testnav.component';
 import { TestProgressComponent } from './test1/testprogress/testprogress.component';
-import { Sub1Component } from './test1/sub1/sub1.component';
-
+import { Subpage1Component } from './views/subpage1/subpage1.component';
+//import { VendorComponent } from './vendor/vendor.component';
 
 
 
@@ -86,7 +86,7 @@ import { Sub1Component } from './test1/sub1/sub1.component';
     Test2Component,
     TestnavComponent,
     TestProgressComponent,
-    Sub1Component
+    Subpage1Component
   ],
   providers: [{
     provide: LocationStrategy,

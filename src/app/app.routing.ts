@@ -9,6 +9,7 @@ import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import {Test1Component} from './test1/test1.component';
+import {Subpage1Component} from './views/subpage1/subpage1.component'
 
 
 export const routes: Routes = [
@@ -52,6 +53,14 @@ export const routes: Routes = [
       title: 'Register Page'
     }
   },
+  {
+    path:'subpage1',
+    component:Subpage1Component,
+    data:{
+      title:'Subpage1'
+    }
+
+  },
   
   {
     path: '',
@@ -63,6 +72,11 @@ export const routes: Routes = [
       {
         path: 'buttons',
         loadChildren: () => import('./views/buttons/buttons.module').then(m => m.ButtonsModule)
+      },
+      {
+        path: 'vendor',
+        loadChildren: () => import('./vendor/vendor.module').then(m => m.VendorModule)
+
       },
       {
         path: 'charts',

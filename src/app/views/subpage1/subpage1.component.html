@@ -1,0 +1,126 @@
+<div class="card form-group sub1">
+        <form [formGroup]="subpage1" (ngSubmit)="onSubmit()">
+        <div class="card-header" align="center"> <!--style=" height: 10rem;">-->
+            <div class="alert alert-success" role="alert" dismiss-on-timeout="5000">
+             <strong style="font-size: large;">Welcome partner!</strong>
+            <br> <small style="font-size: medium;">*Please fill in some primary details related to the studyroom.
+                     Make sure you have photographs ready with you to upload on the portal.</small>
+            </div>
+              <ul class="nav nav-pills card-header-pill">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#/sub1">Page 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/sub2">Page 2</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#/sub3">Page 3</a>
+              </li>
+              </ul>               
+        </div>
+        <div class="card-body" >
+            
+        <div class="form-group">
+            <label for="company">Study Room Name </label>
+            <input type="text" class="form-control" id="company" placeholder="Name of Study Room"
+            formControlName="studyroomname" [class.is-invalid]="studyroomname.invalid && studyroomname.touched" readonly>
+        </div>
+        <div class="form-group ">
+            <label for="add1">*Address 1</label>
+            <input type="text" class="form-control" id="add1" placeholder="Building Name/No., Floor, etc."
+            formControlName="add1" [class.is-invalid]="add1.invalid && add1.touched" [class.is-valid]="add1.valid && add1.touched"  required>
+
+            <div *ngIf="add1.invalid && add1.touched">
+                    <div *ngIf="add1.errors?.required" class="invalid">
+                       Address is required
+                      </div>
+
+                      
+
+                      <div *ngIf="add1.errors?.minlength" class="invalid" >
+                          Minimum 3 letters required
+                        </div>
+
+                </div>
+
+          </div>
+        <div class="form-group ">
+            <label for="add2">*Address 2</label>
+            <input type="text" class="form-control" id="add2" placeholder="Locality, Landmark, etc." 
+            formControlName="add2" [class.is-invalid]="add2.invalid && add2.touched" [class.is-valid]="add2.valid && add2.touched" required >
+
+            <div *ngIf="add2.invalid && add2.touched">
+                    <div *ngIf="add2.errors?.required" class="invalid" role="alert">
+                       Address is required
+                      </div>
+
+                      <div *ngIf="add2.errors?.minlength" class="invalid" role="alert">
+                          Minimum 3 letters required
+                        </div>
+
+                </div>
+
+          </div>
+        <div class="row">
+            <div class="form-group col-sm-6 was-validated">
+            <label for="city">*City</label>
+            <input type="text" class="form-control " id="city" placeholder="Enter your city"
+            formControlName="city" [class.is-invalid]="city.invalid && city.touched" [class.is-valid]="city.valid && city.touched"  required>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please provide a valid information.
+              </div>
+            </div>
+            <div class="form-group col-sm-6">
+            <label for="state">State</label>
+            <input type="text" class="form-control" id="state" placeholder="State"
+            formControlName="state" [class.is-invalid]="state.invalid && state.touched"  readonly>
+            </div>      
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-6 ">
+                <label for="postal-code">Postal Code</label>
+                <input type="text" class="form-control" id="postal-code" placeholder="Postal Code" 
+                formControlName="postal" [class.is-invalid]="postal.invalid && postal.touched" [class.is-valid]="postal.valid && postal.touched" required >
+                <div *ngIf="postal.invalid && postal.touched">
+                        <div *ngIf="postal.errors?.required" class="invalid" role="alert">
+                           Postal code required
+                          </div>
+    
+                          <div *ngIf="postal.errors?.minlength || postal.errors?.maxlength" class="invalid" role="alert">
+                                Postal code is only 6 digits
+                            </div>
+    
+                    </div>
+                
+                </div>
+            <div class="form-group col-sm-6">
+                <label for="year">*Year of Establishment</label>
+                <input type="number" class="form-control" id="year" placeholder="YYYY"
+                min="1980" max="2020"
+                formControlName="year" [class.is-invalid]="year.invalid && year.touched" [class.is-valid]="year.valid && year.touched" required>
+                
+                <div *ngIf="year.invalid && year.touched">
+                        <div *ngIf="year.errors?.min" class="invalid" role="alert">
+                            Minimum year is 1980
+                          </div>
+    
+                          <div *ngIf="year.errors?.max" class="invalid" role="alert">
+                              Maximum year cannot be grater than {{year1}}
+                            </div>
+    
+                    </div>
+
+            </div>
+            </div>
+        
+        </div>
+        <div class="card-footer" style=" height: 4rem;">
+          <div class="col-5 col-sm-5 col-md mb-3 mb-xl-0 text-center">
+          <button type="submit" onclick="location.href='#/subpage1'"class="btn btn-primary">Go to Page 2</button>
+        </div>
+          </div>
+        </form>
+    </div>
