@@ -1,0 +1,20 @@
+.sub2 { 
+    margin: 0 auto; 
+    width:700px;
+    }
+
+    .invalid {
+        width: 100%;
+        margin-top: 0.25rem;
+        font-size: 80%;
+        color: #f86c6b;
+    }
+    select{
+       width: auto;
+       min-width: 100px;
+       max-width: 100px;
+    }
+    input{
+        width: auto;
+        max-width: 100px;
+    }

@@ -1,0 +1,344 @@
+<div class="card form-group sub2">
+        <div class="card-header" align="center"> <!--style=" height: 10rem;">-->
+              <ul class="nav nav-pills card-header-pill">
+                <li class="nav-item">
+                    <a class="nav-link" href="#/sub1">Page 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#/sub2">Page 2</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#/sub3">Page 3</a>
+              </li>
+              </ul>               
+        </div>
+        <form [formGroup]="subpage2" (ngSubmit)="onSubmit()">
+        <div class="card-body" >
+        <div class="row">
+          <div class="form-group col-sm-4">
+            <label for="acnac">Air Conditioning facility</label>
+            <select class="form-control" id="acnac"  formControlName="ac_nonac" [class.is-invalid]="ac_nonac.invalid && ac_nonac.touched">
+              <option>AC</option>
+              <option>Non AC</option>
+              <option>Both</option>
+            </select>
+             <!--Ac Non ac Validation-->
+      <div *ngIf="ac_nonac.invalid && ac_nonac.touched">
+            
+            <div *ngIf="ac_nonac.errors?.required" class="invalid">
+               Field is required
+              </div>                     
+        </div>
+          </div>
+           
+          <div class="form-group col-sm-4">
+            <label for="acstart">AC Start Time</label>
+            <div class="input-group">
+          <input type="text" id="acstart" name="acstart" class="form-control" placeholder="06" disabled>
+            <span class="input-group-append">
+              <select class="form-control" id="acstart" disabled>
+              <option>AM</option>
+              <option>PM</option>
+            </select>
+          </span>
+        </div>
+      </div>
+      <div class="form-group col-sm-4">
+        <label for="acend">AC End Time</label>
+        <div class="input-group">
+      <input type="text" id="acend" name="acend" class="form-control" placeholder="06" disabled>
+        <span class="input-group-append">
+          <select class="form-control" id="acend">
+          <option>AM</option>
+          <option>PM</option>
+        </select>
+      </span>
+      </div>
+      </div>
+     
+     
+      
+        </div>
+        
+
+          <div class="form-group">
+          <label for="seat">Type of Seating</label>
+          <select class="form-control" id="seat"  formControlName="seat" [class.is-invalid]="seat.invalid && seat.touched">
+            <option>Cubicles</option>
+            <option>Open Table and Chairs</option>
+            <option>Both</option>
+          </select>
+          <!--Seat Validation-->
+      <div *ngIf="seat.invalid && seat.touched">
+            
+            <div *ngIf="seat.errors?.required" class="invalid">
+               Seating type is required
+              </div>                     
+        </div>
+        </div>
+              <label>Timings of Study Room</label>
+              <div>
+              <table class="table table-bordered" style="height: auto;">
+                <thead>
+                  <tr>
+                    <th>Day</th>
+                    <th>Opening Time</th>
+                    <th>Closing Time</th>
+                    <th>Holiday</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Monday</td>
+                    <td><div class="input-group">
+                      <input type="text" id="monopen" name="monopen" (change)="change()" class="form-control" placeholder="06"  formControlName="monopen" [class.is-invalid]="monopen.invalid && monopen.touched">
+                        <span class="input-group-append">
+                          <select class="form-control" id="monopen"  formControlName="monopen_type" [class.is-invalid]="monopen_type.invalid && monopen_type.touched">
+                          <option>AM</option>
+                          <option>PM</option>
+                        </select>
+                      </span>
+                      </div></td>
+                    <td>
+                      <div class="input-group">
+                        <input type="text" id="monclose" name="monclose" class="form-control" placeholder="06"  formControlName="monclose" [class.is-invalid]="monclose.invalid && monclose.touched">
+                          <span class="input-group-append">
+                            <select class="form-control" id="monclose"  formControlName="monclose_type" [class.is-invalid]="monclose_type.invalid && monclose_type.touched">
+                            <option>AM</option>
+                            <option>PM</option>
+                          </select>
+                        </span>
+                        </div></td>
+                    <td><label class="switch switch-pill switch-primary">
+                      <input type="checkbox" class="switch-input"  formControlName="mon_holiday" [class.is-invalid]="mon_holiday.invalid && mon_holiday.touched" unchecked>
+                      <span class="switch-slider"></span>
+                    </label></td>
+                  </tr>
+                  <tr>
+                    <td>Tuesday</td>
+                    <td><div class="input-group">
+                      <input type="text" id="tueopen" name="tueopen" class="form-control" placeholder="06"  formControlName="tueopen" [class.is-invalid]="tueopen.invalid && tueopen.touched">
+                        <span class="input-group-append">
+                          <select class="form-control" id="tueopen"  formControlName="tueopen_type" [class.is-invalid]="tueopen_type.invalid && tueopen_type.touched">
+                          <option>AM</option>
+                          <option>PM</option>
+                        </select>
+                      </span>
+                      </div></td>
+                    <td><div class="input-group">
+                      <input type="text" id="tueclose" name="tueclose" class="form-control" placeholder="06"  formControlName="tueclose" [class.is-invalid]="tueclose.invalid && tueclose.touched">
+                        <span class="input-group-append">
+                          <select class="form-control" id="tueclose"  formControlName="tueclose_type" [class.is-invalid]="tueclose_type.invalid && tueclose_type.touched">
+                          <option>AM</option>
+                          <option>PM</option>
+                        </select>
+                      </span>
+                      </div></td>
+                    <td><label class="switch switch-pill switch-primary">
+                      <input type="checkbox" class="switch-input"  formControlName="tue_holiday" [class.is-invalid]="tue_holiday.invalid && tue_holiday.touched" unchecked>
+                      <span class="switch-slider"></span>
+                    </label></td>
+                  </tr>
+                  <tr>
+                    <td>Wednesday</td>
+                    <td><div class="input-group">
+                      <input type="text" id="wedopen" name="wedopen" class="form-control" placeholder="06"  formControlName="wedopen" [class.is-invalid]="wedopen.invalid && wedopen.touched">
+                        <span class="input-group-append">
+                          <select class="form-control" id="wedopen"  formControlName="wedopen_type" [class.is-invalid]="wedopen_type.invalid && wedopen_type.touched">
+                          <option>AM</option>
+                          <option>PM</option>
+                        </select>
+                      </span>
+                      </div></td>
+                    <td><div class="input-group">
+                      <input type="text" id="wedclose" name="wedclose" class="form-control" placeholder="06"  formControlName="wedclose" [class.is-invalid]="wedclose.invalid && wedclose.touched">
+                        <span class="input-group-append">
+                          <select class="form-control" id="wedclose"  formControlName="wedclose_type" [class.is-invalid]="wedclose_type.invalid && wedclose_type.touched">
+                          <option>AM</option>
+                          <option>PM</option>
+                        </select>
+                      </span>
+                      </div></td>
+                    <td><label class="switch switch-pill switch-primary">
+                      <input type="checkbox" class="switch-input"  formControlName="wed_holiday" [class.is-invalid]="wed_holiday.invalid && wed_holiday.touched" unchecked>
+                      <span class="switch-slider"></span>
+                    </label></td>
+                  </tr>
+                  <tr>
+                    <td>Thursday</td>
+                    <td><div class="input-group">
+                      <input type="text" id="thursopen" name="thursopen" class="form-control" placeholder="06"  formControlName="thursopen" [class.is-invalid]="thursopen.invalid && thursopen.touched">
+                        <span class="input-group-append">
+                          <select class="form-control" id="thursopen"  formControlName="thursopen_type" [class.is-invalid]="thursopen_type.invalid && thursopen_type.touched">
+                          <option>AM</option>
+                          <option>PM</option>
+                        </select>
+                      </span>
+                      </div></td>
+                    <td><div class="input-group">
+                      <input type="text" id="thursclose" name="thursclose" class="form-control" placeholder="06"  formControlName="thursclose" [class.is-invalid]="thursclose.invalid && thursclose.touched">
+                        <span class="input-group-append">
+                          <select class="form-control" id="thursclose"  formControlName="thursclose_type" [class.is-invalid]="thursclose_type.invalid && thursclose_type.touched">
+                          <option>AM</option>
+                          <option>PM</option>
+                        </select>
+                      </span>
+                      </div></td>
+                    <td><label class="switch switch-pill switch-primary">
+                      <input type="checkbox" class="switch-input"  formControlName="thurs_holiday" [class.is-invalid]="thurs_holiday.invalid && thurs_holiday.touched" unchecked>
+                      <span class="switch-slider"></span>
+                    </label></td>
+                  </tr>
+                  <tr>
+                    <td>Friday</td>
+                    <td><div class="input-group">
+                      <input type="text" id="friopen" name="friopen" class="form-control" placeholder="06"  formControlName="friopen" [class.is-invalid]="friopen.invalid && friopen.touched">
+                        <span class="input-group-append">
+                          <select class="form-control" id="friopen"  formControlName="friopen_type" [class.is-invalid]="friopen_type.invalid && friopen_type.touched">
+                          <option>AM</option>
+                          <option>PM</option>
+                        </select>
+                      </span>
+                      </div></td>
+                    <td><div class="input-group">
+                      <input type="text" id="friclose" name="friclose" class="form-control" placeholder="06"  formControlName="friclose" [class.is-invalid]="friclose.invalid && friclose.touched">
+                        <span class="input-group-append">
+                          <select class="form-control" id="friclose"  formControlName="friclose_type" [class.is-invalid]="friclose_type.invalid && friclose_type.touched"> 
+                          <option>AM</option>
+                          <option>PM</option>
+                        </select>
+                      </span>
+                      </div></td>
+                    <td><label class="switch switch-pill switch-primary">
+                      <input type="checkbox" class="switch-input"  formControlName="fri_holiday" [class.is-invalid]="fri_holiday.invalid && fri_holiday.touched" unchecked>
+                      <span class="switch-slider"></span>
+                    </label></td>
+                  </tr>
+                  <tr>
+                    <td>Saturday</td>
+                    <td><div class="input-group">
+                      <input type="text" id="satopen" name="satopen" class="form-control" placeholder="06"  formControlName="satopen" [class.is-invalid]="satopen.invalid && satopen.touched">
+                        <span class="input-group-append">
+                          <select class="form-control" id="satopen"  formControlName="satopen_type" [class.is-invalid]="satopen_type.invalid && satopen_type.touched">
+                          <option>AM</option>
+                          <option>PM</option>
+                        </select>
+                      </span>
+                      </div></td>
+                    <td><div class="input-group">
+                      <input type="text" id="satclose" name="satclose" class="form-control" placeholder="06"  formControlName="satclose" [class.is-invalid]="satclose.invalid && satclose.touched">
+                        <span class="input-group-append">
+                          <select class="form-control" id="satclose"  formControlName="satclose_type" [class.is-invalid]="satclose_type.invalid && satclose_type.touched">
+                          <option>AM</option>
+                          <option>PM</option>
+                        </select>
+                      </span>
+                      </div></td>
+                    <td><label class="switch switch-pill switch-primary">
+                      <input type="checkbox" class="switch-input"  formControlName="sat_holiday" [class.is-invalid]="sat_holiday.invalid && sat_holiday.touched" unchecked>
+                      <span class="switch-slider"></span>
+                    </label></td>
+                  </tr>
+                  <tr>
+                    <td>Sunday</td>
+                    <td><div class="input-group">
+                      <input type="text" id="sunopen" name="sunopen" class="form-control" placeholder="06"  formControlName="sunopen" [class.is-invalid]="sunopen.invalid && sunopen.touched">
+                        <span class="input-group-append">
+                          <select class="form-control" id="sunopen"  formControlName="sunopen_type" [class.is-invalid]="sunopen_type.invalid && sunopen_type.touched">
+                          <option>AM</option>
+                          <option>PM</option>
+                        </select>
+                      </span>
+                      </div></td>
+                    <td><div class="input-group">
+                      <input type="text" id="sunclose" name="sunclose" class="form-control" placeholder="06"  formControlName="sunclose" [class.is-invalid]="sunclose.invalid && sunclose.touched">
+                        <span class="input-group-append">
+                          <select class="form-control" id="sunclose"  formControlName="sunclose_type" [class.is-invalid]="sunclose_type.invalid && sunclose_type.touched">
+                          <option>AM</option>
+                          <option>PM</option>
+                        </select>
+                      </span>
+                      </div></td>
+                    <td><label class="switch switch-pill switch-primary">
+                      <input type="checkbox" class="switch-input"  formControlName="sun_holiday" [class.is-invalid]="sun_holiday.invalid && sun_holiday.touched" unchecked>
+                      <span class="switch-slider"></span>
+                    </label></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+              <div class="form-group">
+                <br>
+                <label for="idproof">Upload Id proof</label>
+                <select class="form-control" id="idproof"  formControlName="idproof" [class.is-invalid]="idproof.invalid && idproof.touched">
+                  <option>Aadhar Card</option>
+                  <option>Pan Card</option>
+                  <option>Passport</option>
+                  <option>Driving Licence</option>
+                  <option>Other</option>
+                </select>
+                <!--id proff Validation-->
+      <div *ngIf="idproof.invalid && idproof.touched">
+            
+            <div *ngIf="idproof.errors?.required" class="invalid">
+               Id proof is required
+               <br><br>
+              </div>                     
+        </div>
+                  <div class="form-group">
+                  <input type="file" class="form-control-file" id="upload"  formControlName="upload" [class.is-invalid]="upload.invalid && upload.touched" (change)="fileChangeEvent($event)">
+
+                  <div [class.d-none]="uploaded">
+                  <image-cropper
+                    [imageChangedEvent]="imageChangedEvent"
+                    [maintainAspectRatio]="true"
+                    [aspectRatio]="690/540"
+                    [resizeToWidth]="300"
+                    [resizeToHeight]="300"
+                    format="png"
+                    (imageCropped)="imageCropped($event)"
+                    (imageLoaded)="imageLoaded()"
+                    (cropperReady)="cropperReady()"
+                    (loadImageFailed)="loadImageFailed()"
+                    ></image-cropper>
+                </div>
+                
+                <button [class.d-none]="button" (click)="toggle()" type="button" class="btn btn-outline-success">Upload</button>
+
+
+                  
+
+
+
+                  
+
+<img height="300" width="300" [class.d-none]="preview" [src]="croppedImage" />
+
+
+
+                  <!--upload Validation-->
+      <div *ngIf="upload.invalid && upload.touched">
+            
+            <div *ngIf="upload.errors?.required" class="invalid">
+               Upload valid document
+               <br><br>
+              </div>                     
+        </div>
+                </div>
+              <br>
+              <br>
+              </div>
+              <div class="form-group" style="font-size:small;">
+                <label for="desc">A short description about the studyroom<code>*Optional</code></label>
+                <textarea id="desc" name="desc" rows="5" class="form-control" placeholder="Eg:
+      How did it start?
+      Any special facilities that you provide?
+      How is the environment?"  formControlName="desc" [class.is-invalid]="desc.invalid && desc.touched"></textarea>
+      </div>
+        <div class="card-footer" style=" height: 4rem;">
+          <div class="col-5 col-sm-5 col-md mb-3 mb-xl-0 text-center">
+          <button type="submit" onclick="location.href='#/sub3'" class="btn btn-primary" [disabled]="!subpage2.valid">Go to Page 3</button>
+        </div>
+          </div>
+      </div>
+      </form>

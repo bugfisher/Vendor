@@ -10,6 +10,8 @@ import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import {Test1Component} from './test1/test1.component';
 import {Subpage1Component} from './views/subpage1/subpage1.component'
+import { VendorComponent } from './vendor/vendor.component';
+import { Sub2Component } from './views/sub2/sub2.component';
 
 
 export const routes: Routes = [
@@ -61,6 +63,22 @@ export const routes: Routes = [
     }
 
   },
+  {
+    path:'sub2',
+    component:Sub2Component,
+    data:{
+      title:'Subpage1'
+    }
+
+  },
+
+  // {
+  //   path: 'vendor',
+  //   component: VendorComponent,
+  //   data: {
+  //     title: 'Home'
+  //   }
+  // },
   
   {
     path: '',
@@ -74,10 +92,10 @@ export const routes: Routes = [
         loadChildren: () => import('./views/buttons/buttons.module').then(m => m.ButtonsModule)
       },
       {
-        path: 'vendor',
-        loadChildren: () => import('./vendor/vendor.module').then(m => m.VendorModule)
-
+        path:'vendor',
+        loadChildren:() => import('./vendor/vendor.module').then(m => m.VendorModule)
       },
+      
       {
         path: 'charts',
         loadChildren: () => import('./views/chartjs/chartjs.module').then(m => m.ChartJSModule)

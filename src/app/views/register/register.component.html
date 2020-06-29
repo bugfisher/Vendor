@@ -29,15 +29,26 @@
 
 
 
+
 <div class="app-body">
   
   <main class="main d-flex align-items-center">
+    
     <div class="container"><br><br>
+      <div class="row" >
+          <div class="col-md-6 mx-auto">
+            
+          </div>
+        </div>
       <div class="row">
         <div class="col-md-6 mx-auto">
           <div class="card mx-4">
+              <p class="alert alert-success" *ngIf="show_card">
+                  <strong>Registration Success!</strong>&nbsp;You will be redirected in {{timeLeft}} Seconds....
+          
+              </p>
             <div class="card-body p-4">
-              <form [formGroup]="registration" (ngSubmit)="onSubmit()">
+              <form [formGroup]="registration" (ngSubmit)="onSubmit();">
                 <h2 style="text-align:center;">Register with PeerTag</h2>
                 <p class="text-muted" style="text-align:center;">Create your account</p><hr>
                 <div class="input-group mb-3">
@@ -159,7 +170,8 @@
                   <div class="input-group-prepend">
                       <span class="input-group-text"><i class="icon-lock"></i></span>
                     </div>
-                    <input type="password" class="form-control" placeholder="Confirm Password" autocomplete="new-password" formControlName="confirmPassword" required>
+                    <input type="password" class="form-control" placeholder="Confirm Password" autocomplete="new-password" formControlName="confirmPassword" required><br>
+                    <input type="file" formControlName="test_file">
 
                 </div>
                 <br>

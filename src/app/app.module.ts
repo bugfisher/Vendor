@@ -9,6 +9,8 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
 import {ReactiveFormsModule} from '@angular/forms';
  import { RecaptchaModule } from 'ng-recaptcha';
+ import {HttpClientModule} from '@angular/common/http';
+ import { FormService } from './views/form.service';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -53,7 +55,14 @@ import { Test2Component } from './test1/test2/test2.component';
 import { TestnavComponent } from './test1/testnav/testnav.component';
 import { TestProgressComponent } from './test1/testprogress/testprogress.component';
 import { Subpage1Component } from './views/subpage1/subpage1.component';
+import { VendorComponent } from './vendor/vendor.component';
 //import { VendorComponent } from './vendor/vendor.component';
+
+import {VendorModule} from './vendor/vendor.module';
+import { Sub2Component } from './views/sub2/sub2.component';
+
+//Image cropper
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 
 
@@ -72,8 +81,10 @@ import { Subpage1Component } from './views/subpage1/subpage1.component';
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ChartsModule,
+    ImageCropperModule,
     ReactiveFormsModule,
-     RecaptchaModule
+     RecaptchaModule,
+     HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -86,12 +97,15 @@ import { Subpage1Component } from './views/subpage1/subpage1.component';
     Test2Component,
     TestnavComponent,
     TestProgressComponent,
-    Subpage1Component
+    Subpage1Component,
+    VendorComponent,
+    Sub2Component
   ],
   providers: [{
     provide: LocationStrategy,
     useClass: HashLocationStrategy
-  }],
+    
+  },FormService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
